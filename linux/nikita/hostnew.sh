@@ -1,4 +1,12 @@
 #!/bin/bash
 
-ipnmask=$(ip addr | grep -w inet | awk '/brd/{print $2}')
-nmap -sn $ipnmask | sed 's/[()]//g' | awk '/Nmap scan report/{host=$NF} /Host is up/{time=$(NF-1)} END{print host, time}'
+ipnmask=$(ip addr | grep enp0s | grep -w inet | awk '/inet/{print $2}')
+
+host_find() {
+	nmap -sn -v $ipnmask | sed 's/[()]//g' | grep -v down | awk '/Nmap scan report/ {ip=$NF} /Host is up/ {latency=$(NF-1); print ip, latency}'
+}
+
+host_find
+
+
+
