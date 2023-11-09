@@ -1,4 +1,5 @@
 #!/bin/bash
+#Correct script
 
 ipnmask=$(ip addr | sed '1,7d' | grep -w 'inet' |  awk '{print $2}')
 
