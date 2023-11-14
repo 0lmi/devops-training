@@ -24,7 +24,7 @@ else
         ssh-add ~/.ssh/id_rsa
     fi
     # Don't leave extra agents around: kill it on exit. You may not want this part.
-    trap "ssh-agent -k" exit
+    trap "ssh-agent -k" exit.
 fi
 ```
 
