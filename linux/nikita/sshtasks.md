@@ -1,6 +1,6 @@
 # This is how i confirm the task with the ssh keys, and ssh-agent
->All of this steps are provided to make in UNIX based system
->And not able to work with MAC and WINDOWS os
+All of this steps are provided to make in UNIX based system
+And not able to work with MAC and WINDOWS os
 
 ### 1. Create the ssh key, give for this key **passprashe**
 ```
@@ -10,7 +10,7 @@ ssh-keygen -t ed25519 -C "example@linux.eu"
 ```
 cd /home/your_username/.ssh/
 ```
-> id_ed25519.pub, open it and copy the text inside
+- **id_ed25519.pub**, open it and copy the text inside
 
 - Add the public key in web site github.
 [Git hub link where to paste the ssh-key](https://github.com/settings/keys)
