@@ -19,8 +19,8 @@ cd /home/your_username/.ssh/
 **Use root to do it**
 - You need to start the ssh-agent on the background
 
->**Note**
->The ssh-agent will save in your ram memory, thats mean when you restart your PC should to do this step again
+
+The ssh-agent will save in your ram memory, thats mean when you restart your PC should to do this step again
 
 ```
 eval "$(ssh-agent -s")
@@ -31,8 +31,8 @@ ssh-add ~/.ssh/id_ed25519
 ```
 - In the last step it will ask for you to create a *passphrase*, for your own security make it **strong** not ~~simple~~
 
->**NOTE**
->Better to not save the passphrase in any of the .txt files or the paper list. Form it on other device like usb-flash. That provide to you full security of your data.
+
+Better to not save the passphrase in any of the .txt files or the paper list. Form it on other device like usb-flash. That provide to you full security of your data.
 
 
 ### 3. Cheack if the ssh-agent running correctly 
