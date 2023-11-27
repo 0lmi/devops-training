@@ -25,14 +25,13 @@ host_find_fun() {
 
 version_fun() {
 	sudo apt install -y nmap > /dev/null 2>/dev/null
-if [ $? == 1 ]; then
+	if [ $? == 1 ]; then
 	echo "Unexpected problem your based version is not suppost to download nmap command, please do it manually"
 	exit
 fi
 }
 
-if [ -f $command ]
-then
+if [ -f $command ]; then
 	echo "Great, your pc is configured to run Host-Scanning-Scipt"
 	host_find_fun
 else
