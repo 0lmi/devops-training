@@ -1,0 +1,50 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content %}
+<html >
+    <head>
+    <title>Note Creation</title>
+    </head>
+    <body>
+<style>
+    body {
+        background-image: linear-gradient(to left,pink,orange);
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    li.grove_border{
+        color: white;
+        border-radius: 5px;
+    }
+
+    p {
+        color: #000000;
+    }
+    
+    li {
+        display: inline-block;
+        max-width:100%; 
+        word-break:break-all;
+        background-color: white;
+    }
+</style>
+<form method="POST">
+    <h1 align='center'>Your Notes</h1>
+    <div align='center' class="form-group">
+        <label for="note">Notes</label>
+        <p>
+            <textarea name="note" id="note" class="form-control"></textarea>
+        </p>
+        <br />
+        <button type="submit" class="btn btn-primary">Add Note</button>
+    </div>
+</form>
+    <div class="form-group">
+        <ul class="list-group list-group-flush" id="user_see">
+            <li class="grove_border" class="list-group-item"><p>{{ result }}</p></li>
+        </ul>
+    </div>
+    </body>
+</html>
+{% endblock %}
