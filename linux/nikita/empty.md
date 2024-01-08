@@ -18,7 +18,7 @@ mkdir your_directory_example
 
 ### 2. Empty space which still have size
 
-Firs i will show for you needable commands to check directory sizes.
+First i will show for you needable commands to check directory sizes.
 | Check disk space usage | List the directory content | Ckeck directory path |
 | --- | --- | ---|
 | `du -sh` | `ls -la` | `pwd` |
@@ -34,6 +34,15 @@ Now i will show you example which indformation cost the space for the disk.(Ubun
 3. (Check directory path) And the path for the file where directory is located.
 
 ---
+
+### 3. 2 Important category of directory size understanding
+
+*File System Block Size* - file system are organaized in the blocks, 1 kilobyte is equal 1024 bytes.
+And then empty folders is usually taking the smallest of possible space by the 4 blocks **4096** bytes.
+Where this space can be leaved for Metadata.
+*Directory Structure* - Directories in Linux are represented by a data structure called an "inode." 
+Each directory contains information about the files it holds and references to the corresponding file inodes. 
+The information stored in these directory inodes constitutes the metadata of the directory.
 
 Thank you for reading my empty folder overview.
 ![alt text](http://picsum.photos/200/200)
