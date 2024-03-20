@@ -29,8 +29,12 @@ After creating a new directory it still using a disk space, in mostly its a litt
 As it mainly includes metadata such as the directory entry itself and information about the names and numbers of the files.
 The actual file data is not stored in the directory itself but in the inodes associated with the files.
 Now i will show you example which indformation cost the space for the disk.(Ubuntu)
-1. (Check disk space usage) it show that folder still have the size 4K, thats mean 4000 bytes `linux not showing the decimal, hundredths, thousandths parts`. 
-2. (List the directory content) There you can see 2 dots **. ..**, it the links of the files. It shows for use that directory is really not that empty, it still have link for it self.
+1. (Check disk space usage) it show that folder still have the size 4K, thats mean 4000 bytes `linux not showing the decimal, hundredths, thousandths parts`.
+4K is equal 4000 bytes, because K is meaing KILO(kilobytes). And when linux is showing size 4K he showing for us rounded value, the real size will be **4096** bytes. 
+2. (List the directory content) There you can see 2 dots **. ..**, it the links of the files.
+1 dot is the current link for the directory where this dot is spaced.
+2 dots is the link for directory which is located 1 step higher by hierarchy.
+It shows for use that directory is really not that empty, it still have link for it self.
 3. (Check directory path) And the path for the file where directory is located.
 
 ---
@@ -43,6 +47,11 @@ Where this space can be leaved for Metadata.
 *Directory Structure* - Directories in Linux are represented by a data structure called an "inode." 
 Each directory contains information about the files it holds and references to the corresponding file inodes. 
 The information stored in these directory inodes constitutes the metadata of the directory.
+
+# Answer
+Empty folder not taking any real space on disk(if i will create a file inside empty directory with 4096 of english symbols, then file size will left the same 4096 bytes).
+The size which showing after `du-sh` its the storage for metadata.
+The size 4096 bytes, its provided minimal storage in 4 blocks to hold metadata inside of it.
 
 Thank you for reading my empty folder overview.
 ![alt text](http://picsum.photos/200/200)
