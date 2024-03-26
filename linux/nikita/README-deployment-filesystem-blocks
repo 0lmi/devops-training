@@ -1,0 +1,47 @@
+# Characters space usage in text file
+The task is how many bytes of disk space took file which contain 5000 characters.
+(OS: Linux, filesystem: ext4, encoding: UTF8).
+
+---
+
+# UTF-8 Describe
+UTF-8 is a any line of characters encoding system, which can encode any characters of different languages.
+UTF-8 is based on 8 bit code unit, where each character is 1-4 bytes(1-2 bytes most usable).
+
+---
+
+### System
+1. File system : *ext4*
+2. OS : *Linux*
+3. Encoding : *UTF-8*
+
+### Characters
+1. *5000 Characters*
+2. *English language*
+
+Usually used english characters - *1byte*
+Thats mean file with 5000 characters will be - *5000bytes*
+
+---
+
+# Explanation:
+Thats how i understand the answer on that question. 
+When we need to locate data which non-electrician-requirment, data will be sepperate in small *1kb-1024bytes* blocks.
+The ext4 filesystem is sepperate that block for metadata and the real data, in block where is stored metadata called *superblock*.
+For metadata, there need to be stored location of file, rights for the file, extensions, t.t).
+(Its only the overview from bird fly, in real life its have more layers which and more processes inside).
+UTF-8 is making that 1 simple english letter, will be 1byte of stored information.
+
+---
+
+I need count how many block will took this file:
+
+### Statement:
+1 block (4096 bytes)
+5000 english symbols file is 5000bytes.
+
+### Answer:
+Thats mean this file will took 2 blocks 8192 bytes.
+In this case we need to consider that, 3192 left bytes will not burn they still can store the data.
+
+My final answer is, to store the file 5000bytes with UTF-8 encoding and using the ext4 filesystem, we need to have 2 blocks(8192bytes)
