@@ -1,25 +1,20 @@
-from flask import Blueprint, render_template, request, flash
-from .db import create_note, get_note
+from flask import Blueprint, render_template, request, flash, redirect
+from .db import create_note, find_note, delete_note
 
 views = Blueprint('views', __name__)
 collection_note = 'note'
 
 @views.route('/home', methods=['GET', 'POST'])
 def notes():
-    paper = collection_note
-    print(request.form)
-    
     if request.method == 'POST':
-        print(request.form)
-        note = request.form.get('note')
-        if len(note) < 1:
-            flash('Note is too short!', category="error")
+        note_html = request.form.get('note_html')
+        if len(note_html) < 1:
+            flash('Note should have atleast 1 character', category='error')
+            return render_template("home.html", boolean=True)    
         else:
-            create_note(note)
-            flash('Note created successfully!', category="success")
-            note_doc = get_note(note)
-            if note_doc:  
-                paper = request.form.get('note') 
-                print(paper)
-    print(request.method)         
-    return render_template("home.html", result=paper)
+            create_note(note_html)
+            flash('Note created!', category='success')
+            
+          
+    all_notes = find_note()
+    return render_template("home.html", all_notes=all_notes)
