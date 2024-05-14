@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather forecast</title>
+</head>
+<body>
+    <a href="/">Home</a>
+    <br><br>
+    <h3>Weather forecast</h3>
+    <form action="/weather" method="post">
+        <label for="city">City:</label><br>
+        <input type="text" id="city" name="city"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <h3>{{ forecast }}</h3>
+</body>
+</html>

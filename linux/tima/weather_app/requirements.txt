@@ -1,0 +1,4 @@
+flask
+pywttr
+pymongo
+envparse
