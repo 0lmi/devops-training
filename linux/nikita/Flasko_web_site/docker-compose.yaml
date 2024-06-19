@@ -1,0 +1,40 @@
+version: "3.8"
+services:
+   #nginx service
+  #web:
+  #  container_name: "web"
+  #  image: nginx:alpine
+  #  depends_on:
+  #    - app
+  #  ports:
+  #    - "8080:80"
+  #  volumes:
+  #    - ./app/conf.d:/etc/nginx/conf.d
+  #  networks:
+  #    - custom
+ app:
+  container_name: "app"
+  image: myapp/site:1.6
+  environment:
+    - MONGODB_URL=mongodb://mongo_db/
+ build:
+     context: .
+     dockerfile: Dockerfile
+ ports:
+     - 8080:5000
+ networks: 
+     - custom
+ depends_on:
+     - mongo_db
+ mongo_db:
+    image: mongo
+    container_name: "mongo_db"
+    ports:
+      - 27017:27017
+    networks:
+      - custom
+    volumes:
+      - ./data/db/.mongodata:/data/db
+networks:
+  custom:
+    driver: bridge

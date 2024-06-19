@@ -1,0 +1,5 @@
+pymongo[srv]
+flask
+envparse
+mongomock
+unittest
