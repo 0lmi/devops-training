@@ -12,9 +12,10 @@ Cron can start periodically on user set fixed time or periods.
 ### How it works?
 ---
 Schedulering time will be specified with 5 columns of *
-|*|*|*|*|*|
-|---------|
-|Minutes|Hours|Day|Month|Day of the week|
+| * | * | * | * | * |
+| --- | --- | --- | --- | --- |
+| Minutes | Hours | Day | Month | Day of the week |
+
 The actions of cron are driven by a crontab (cron table) file, a configuration file that specifies shell commands to run periodically on a given schedule.
 The crontab files are stored where the lists of jobs and other instructions to the cron daemon are kept.
 
