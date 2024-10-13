@@ -2,8 +2,7 @@ Task: Know, understand what NAT is, why it is needed, what is the principle of o
 ___
 
 # NAT (Network Address Translation)
-NAT - is a mechanism in TCP/IP networks that allows the IP address to be changed in the header of a packet passing through a traffic r
-outing device.
+NAT - is a mechanism in TCP/IP networks that allows the IP address to be changed in the header of a packet passing through a traffic routing device.
 
 ## Problems solved by NAT
 
